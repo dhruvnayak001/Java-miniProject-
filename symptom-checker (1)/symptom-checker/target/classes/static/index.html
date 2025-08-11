@@ -1,54 +1,44 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Symptom Checker</title>
+    <title>Disease Matcher</title>
 </head>
 <body>
-<h1>Symptom Checker</h1>
-<p>Enter symptoms separated by commas (e.g. fever, cough, chills):</p>
+<h1>Disease Matcher</h1>
 
-<input type="text" id="symptomsInput" placeholder="Enter symptoms here" size="50">
-<button onclick="checkDiseases()">Check Diseases</button>
+<input type="text" id="symptoms" placeholder="Enter symptoms separated by commas">
+<button onclick="matchDiseases()">Check Diseases</button>
 
-<h3>Matched Diseases:</h3>
-<ul id="result"></ul>
+<div id="result"></div>
 
 <script>
-    function checkDiseases() {
-      const input = document.getElementById("symptomsInput").value;
-      const symptoms = input.split(",").map(s => s.trim());
+    async function matchDiseases() {
+        const input = document.getElementById("symptoms").value;
+        const symptoms = input.split(",").map(s => s.trim());
 
-      fetch("http://localhost:8080/api/diseases/match", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(symptoms)
-      })
-      .then(response => {
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
+        try {
+            const response = await fetch("http://localhost:8080/api/diseases/match", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(symptoms)
+            });
+
+            const diseases = await response.json();
+
+            const resultDiv = document.getElementById("result");
+            if (diseases.length === 0) {
+                resultDiv.innerHTML = "<p>No diseases matched.</p>";
+            } else {
+                resultDiv.innerHTML = "<h2>Matched Diseases:</h2><ul>" +
+                    diseases.map(d => `<li><strong>${d.name}</strong>: ${d.description}</li>`).join("") +
+                    "</ul>";
+            }
+        } catch (error) {
+            document.getElementById("result").innerText = "Error: " + error;
         }
-        return response.json();
-      })
-      .then(data => {
-        const resultUl = document.getElementById("result");
-        resultUl.innerHTML = "";
-        if (data.length === 0) {
-          resultUl.innerHTML = "<li>No matching diseases found.</li>";
-        } else {
-          data.forEach(disease => {
-            const li = document.createElement("li");
-            li.textContent = `${disease.name}: ${disease.description}`;
-            resultUl.appendChild(li);
-          });
-        }
-      })
-      .catch(error => {
-        console.error("Error:", error);
-        alert("Failed to connect to backend. Make sure it's running on http://localhost:8080");
-      });
     }
 </script>
 </body>

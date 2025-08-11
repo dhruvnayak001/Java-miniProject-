@@ -5,29 +5,38 @@ import com.symptomchecker.symptom_checker.service.DiseaseService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-@CrossOrigin(origins = "*") // Allow frontend access
+
 @RestController
-@RequestMapping("/api/diseases")
+@CrossOrigin(origins = "*")
+@RequestMapping("/api")
 public class DiseaseController {
-    private final DiseaseService diseaseService;
 
-    public DiseaseController(DiseaseService diseaseService) {
-        this.diseaseService = diseaseService;
+    private final DiseaseService service;
+
+    public DiseaseController(DiseaseService service) {
+        this.service = service;
     }
 
-    @GetMapping
-    public List<Disease> getAllDiseases() {
-        return diseaseService.getAllDiseases();
+    @GetMapping("/match")
+    public List<Disease> matchDiseases(@RequestParam List<String> symptoms) {
+        List<String> flatSymptoms = symptoms.stream()
+                .flatMap(s -> List.of(s.split(",")).stream())
+                .map(String::trim)
+                .filter(s -> !s.isEmpty())
+                .toList();
+
+        return service.matchBySymptoms(flatSymptoms);
     }
 
-    @PostMapping("/match")
-    public List<Disease> matchDiseases(@RequestBody List<String> symptoms) {
-        return diseaseService.matchDiseases(symptoms);
-    }
-    @PostMapping
+
+
+    @PostMapping("/diseases")
     public Disease addDisease(@RequestBody Disease disease) {
-        return diseaseService.addDisease(disease);
+        return service.addDisease(disease);
     }
 
-
+    @GetMapping("/diseases")
+    public List<Disease> getAllDiseases() {
+        return service.getAllDiseases();
+    }
 }
