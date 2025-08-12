@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="signup.css">
+</head>
+<body>
+    <div class="login-page">
+
+        <header class="main-header">
+            <div class="container">
+                <a href="#" class="logo"><i class="fa-solid fa-hospital"></i> Arogya Mitra</a>
+                <nav class="main-nav">
+                    <a href="#">Services</a>
+                    <a href="#">Find a Doctor</a>
+                    <a href="#">Patients & Visitors</a>
+                    <a href="#">About Us</a>
+                </nav>
+                <div class="header-actions">
+                    <a href="login.html" class="btn btn-secondary">login</a>
+                    <a href="#" class="btn btn-primary">Book Appointment</a>
+                </div>
+            </div>
+        </header>
+
+        <div class="login-container">
+            <div class="login-box">
+                
+                <h2>Create an Account</h2>
+                <form id="signupForm">
+                    <input type="text" id="name" placeholder="Full Name" required>
+                    <input type="text" id="username" placeholder="Username" required>
+                    <input type="password" id="password" placeholder="Password" required>
+                    <input type="number" id="age" placeholder="Age" min="1" required>
+                    <input type="text" id="pan" placeholder="PAN Number" required>
+                    <input type="text" id="state" placeholder="State" required>
+                    <input type="text" id="city" placeholder="City" required>
+                    <input type="text" id="country" placeholder="Country" required>
+                    <button type="submit" class="signup">Sign Up</button>
+                </form>
+                <p class="redirect-text">
+                    Already have an account? <a href="login.html">Log In</a>
+                </p>
+            </div>
+        </div>
+    </div>
+    
+
+
+    <!-- Footer Section -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div><h4>Arogya Mitra Hospital</h4><p>123 Health Road, Badlapur (W),<br>Maharashtra, 421503</p></div>
+                <div><h4>Contact</h4><p><strong>Emergency:</strong> 0251-123-4567</p><p><strong>Appointments:</strong> 0251-765-4321</p></div>
+                <div><h4>Quick Links</h4><ul><li><a href="#">About Us</a></li><li><a href="#">Careers</a></li><li><a href="#">Contact</a></li></ul></div>
+            </div>
+            <div class="copyright"><p>© 2025 Arogya Mitra Hospital. All Rights Reserved.</p></div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
