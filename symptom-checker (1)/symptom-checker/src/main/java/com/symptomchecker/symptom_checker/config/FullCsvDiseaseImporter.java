@@ -31,7 +31,7 @@ public class FullCsvDiseaseImporter implements CommandLineRunner {
         String descFile = "disease_description.csv";
         String precautionFile = "disease_precaution.csv";
         String severityFile = "symptom_severity.csv";
-        String trainingFile = "dataset.csv";
+        String trainingFile = "dataset_sorted.csv";
 
         // 1️⃣ Load descriptions
         Map<String, String> descriptionMap = new HashMap<>();
@@ -81,16 +81,28 @@ public class FullCsvDiseaseImporter implements CommandLineRunner {
         }
 
         // 4️⃣ Load training dataset and merge
+        // inside the "4️⃣ Load training dataset and merge" section
         try (BufferedReader br = new BufferedReader(new InputStreamReader(
                 new ClassPathResource(trainingFile).getInputStream(), StandardCharsets.UTF_8))) {
-            br.readLine();
+            br.readLine(); // skip header
             String line;
+
+            // track unique diseases to avoid accidental duplicates
+            Set<String> processedDiseases = new HashSet<>();
+
             while ((line = br.readLine()) != null) {
                 String[] parts = line.split(",");
                 if (parts.length > 1) {
                     String diseaseName = parts[0].trim();
-                    List<String> symptoms = new ArrayList<>();
+
+                    // skip if already processed
+                    if (processedDiseases.contains(diseaseName.toLowerCase())) {
+                        continue;
+                    }
+
+                    Set<String> symptoms = new HashSet<>(); // use Set to avoid duplicates
                     Map<String, Integer> symptomSevMap = new HashMap<>();
+
                     for (int i = 1; i < parts.length; i++) {
                         if (!parts[i].trim().isEmpty()) {
                             String symptom = parts[i].trim();
@@ -98,14 +110,25 @@ public class FullCsvDiseaseImporter implements CommandLineRunner {
                             symptomSevMap.put(symptom, severityMap.getOrDefault(symptom.toLowerCase(), 0));
                         }
                     }
+
                     String desc = descriptionMap.getOrDefault(diseaseName.toLowerCase(), "");
                     List<String> precs = precautionMap.getOrDefault(diseaseName.toLowerCase(), new ArrayList<>());
 
-                    Disease disease = new Disease(diseaseName, desc, symptoms, precs, symptomSevMap);
+                    Disease disease = new Disease(
+                            diseaseName,
+                            desc,
+                            new ArrayList<>(symptoms), // convert Set -> List
+                            precs,
+                            symptomSevMap
+                    );
+
                     repo.save(disease);
+                    processedDiseases.add(diseaseName.toLowerCase());
                 }
             }
         }
+
+
 
         System.out.println("✅ All CSV data imported into MongoDB");
     }
