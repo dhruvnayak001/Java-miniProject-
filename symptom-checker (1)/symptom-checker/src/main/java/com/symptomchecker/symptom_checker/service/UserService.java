@@ -18,6 +18,14 @@ public class UserService {
     }
 
     public User register(User user) {
+        // ✅ Basic validation
+        if (user.getUsername() == null || user.getUsername().isBlank()) {
+            throw new IllegalArgumentException("Username is required");
+        }
+        if (user.getPassword() == null || user.getPassword().isBlank()) {
+            throw new IllegalArgumentException("Password is required");
+        }
+
         user.setPassword(encoder.encode(user.getPassword())); // encrypt password
         return repo.save(user);
     }
