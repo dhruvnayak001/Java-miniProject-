@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arogya Mitra Hospital | Badlapur</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="container">
+            <!-- Logo -->
+            <a href="index.html" class="logo">
+                <img src="logo.jpg" alt="Arogya Mitra Logo" style="height:70px;">
+            </a>
+
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-menu-toggle " aria-label="Toggle mobile menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <!-- Navigation -->
+            <nav class="main-nav">
+                <ul>
+                    <li>
+                        <a href="#footer">About Us</a>
+                    </li>
+
+                    <li class="dropdown-parent">
+                        <a href="#">Services <i class="fa-solid fa-chevron-down arrow"></i></a>
+                        <div class="dropdown">
+                            <a href="#symptom-checker symtom">Symptom Checker</a>
+                        </div>
+                    </li>
+
+                    <li class="dropdown-parent">
+                        <a href="#">Well-Being <i class="fa-solid fa-chevron-down arrow"></i></a>
+                        <div class="dropdown">
+                            <a href="#">Yoga</a>
+                            <a href="#">Meditation</a>
+                            <a href="#">Fitness</a>
+                        </div>
+                    </li>
+
+                    <li class="dropdown-parent">
+                        <a href="#">More <i class="fa-solid fa-chevron-down arrow"></i></a>
+                        <div class="dropdown">
+                            <a href="blog.html">Blog</a>
+                            <a href="news.html">News</a>
+                            <a href="faq.html">FAQ</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Action Buttons -->
+           <div class="header-actions">
+  <!-- Login button (shown only when not logged in) -->
+  <a href="login.html" class="btn btn-secondary" id="login-btn">Login</a>
+
+  <!-- Profile dropdown (hidden until logged in) -->
+  <div id="profile-menu" class="dropdown-parent" style="display:none;">
+    <a href="#" class="btn btn-secondary">Profile ▼</a>
+    <div class="dropdown">
+      <a href="#" id="profile-info">Profile Info</a>
+      <a href="#" id="logout-btn">Logout</a>
+    </div>
+  </div>
+
+  <a href="#" class="btn btn-primary btna">Book Appointment</a>
+</div>
+
+
+            
+        </div>
+    </header>
+
+    
+    
+
+    <main>
+        <section class="hero-section" id="hero">
+            <div class="hero-text-content">
+                <h1>Most Trusted Symptom checker</h1>
+                <p>Recognized for our unwavering commitment to exceptional patient outcomes and community well-being.</p>
+                <a href="#" class="btn btn-hero">Why Choose Us? <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+            <div class="hero-bottom-banner">
+                <div class="banner-item">
+                    <h4><i class="fa-solid fa-star"></i> Top-Rated Patient Care</h4>
+                    <p>Fast Access</p>
+                </div>
+                <div class="banner-item">
+                    <h4><i class="fa-solid fa-clock"></i> 24/7 Emergency Services</h4>
+                    <p>Always ready to provide critical care</p>
+                </div>
+                <div class="banner-item">
+                    <h4><i class="fa-solid fa-heart-pulse"></i> Advanced Cardiac Unit</h4>
+                    <p>Extensive Care</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="difference">
+            <div class="container">
+                <h2 class="text-block-background">Your Health, Our Commitment</h2>
+                <p class="section-subtitle text-block-background">We combine advanced medical expertise with a deep dedication to our patients' well-being and comfort.</p>
+                <div class="difference-grid">
+                    <div class="info-card"><div class="icon"><i class="fa-solid fa-heart-pulse"></i></div><h3>Advanced Care</h3><p>Utilizing the latest medical technology for accurate diagnoses and effective treatments.</p></div>
+                    <div class="info-card"><div class="icon"><i class="fa-solid fa-users"></i></div><h3>Patient-First Focus</h3><p>Your comfort and well-being are at the center of everything we do.</p></div>
+                    <div class="info-card"><div class="icon"><i class="fa-solid fa-map-pin"></i></div><h3>Community-Rooted</h3><p>Proudly serving All over India with healthcare tailored to our community's needs.</p></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="symptom-checker symtom">
+            <div class="container">
+                <h2>Feeling Unwell? Let Our Symptom Checker Help.</h2>
+                <p class="section-subtitle" style="max-width: 650px; color: #555; font-size: 1.15rem;">Describe your symptoms to get a preliminary understanding of potential conditions. This tool is for informational purposes only and should not replace professional medical advice.</p>
+
+                <div class="checker-widget">
+                    <div class="icon-wrapper"><div class="icon"><i class="fa-solid fa-notes-medical"></i></div></div>
+                    <p>Enter your primary symptoms below:</p>
+                    <div class="input-group">
+                        <input id="symptom-input" class="search-input" type="text" placeholder="e.g., fever, persistent cough...">
+                        <a href="" class="btn btn-primary" style="border-radius: 10px; ";>Check Symptoms</a>
+                    </div>
+                    <p class="medical-warning">⚠ This is not a substitute for professional medical advice. Always consult a doctor for an accurate diagnosis.</p>
+                </div>    
+                
+        </section>   
+        
+        <section id="patient-services">
+            <div class="container">
+                <h2 class="text-block-background">Information You Need, When You Need It</h2>
+                <p class="section-subtitle text-block-background">We make managing your healthcare simple and transparent, from billing to accessing your medical records.</p>
+                <div class="tab-container">
+                    <div class="tab-nav">
+                        <button class="tab-button active" data-tab="tab-1">Billing & Insurance</button>
+                        <button class="tab-button" data-tab="tab-2">Patient Portal</button>
+                        <button class="tab-button" data-tab="tab-3">Visitor Information</button>
+                    </div>
+                    <div id="tab-1" class="tab-content active">
+                        <div class="alternating-grid">
+                            <div class="text-block-background"><h3>Transparent Pricing & Insurance</h3><p>We believe in financial clarity. Use our tools to find accepted insurance plans and estimate your cost of care. No surprises, just straightforward information to help you plan.</p></div>
+                            <div class="image-placeholder">
+                                <img src="insaurence 2.img" alt="Insurance Information" style="width:100%; height:auto; border-radius:8px;">
+                            </div>
+                        </div>    
+                        <div class="alternating-grid">
+                            <div class="text-block-background"><h3>Health loss ratios up between 200-300 bps for general insurers in Q1FY26 amid claims spike</h3><p>India's general insurance industry entered FY26 grappling with claims pressure, as health loss ratios for leading players rose between 200 and 300 basis points year-on-year during Q1 FY26.</p></div>
+                            <div class="image-placeholder">
+                                <img src="insaurence 1.img" alt="Insurance Analytics" style="width:100%; height:auto; border-radius:8px;">
+                            </div>
+                        </div>
+                    </div>
+                    <div id="tab-2" class="tab-content">
+                        <div class="alternating-grid">
+                            <div class="image-placeholder">
+                                <img src="portal1.img" alt="Patient Portal" style="width:100%; height:auto; border-radius:8px;">
+                            </div>
+                            <div class="text-block-background"><h3>Your Secure Patient Portal</h3><p>Access your medical records, view test results, and communicate with your doctor securely online, anytime, anywhere. Your health information, at your fingertips.</p></div>
+                        </div>    
+                    </div>
+                    <div id="tab-3" class="tab-content">
+                        <div class="alternating-grid">
+                            <div class="text-block-background"><h3>Visitor Information</h3><p>Find our visiting hours, location details via Google Maps, parking information, and hospital amenities to make your visit or a loved one's stay as comfortable as possible.</p></div>
+                            <div class="image-placeholder">
+                                <img src="maps.img" alt="Visitor Information" style="width:100%; height:auto; border-radius:8px;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer" id="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div><h4>Arogya</h4><p>123 Health Road, Badlapur (W),<br>Maharashtra, 421503</p></div>
+                <div><h4>Contact</h4><p><strong>Emergency:</strong> 7620199117</p><p><strong>Appointments:</strong> 8828509609</p></div>
+                <div><h4>Quick Links</h4><ul><li><a href="#">About Us</a></li><li><a href="#">Careers</a></li><li><a href="#">Contact</a></li></ul></div>
+            </div>
+            <div class="copyright"><p>© 2025 Arogya.All Rights Reserved.</p></div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

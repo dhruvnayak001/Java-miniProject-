@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Symptom Checker FAQ | Arogya Mitra</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* FAQ specific styles, matches main theme */
+    .faq-container {
+      max-width: 800px;
+      margin: 48px auto 60px auto;
+      background: #fff;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.11);
+      border-radius: 8px;
+      padding: 32px 24px;
+    }
+    .faq-title {
+      text-align: center;
+      font-size: 2.2rem;
+      font-weight: bold;
+      color: #1976d2;
+      margin-bottom: 12px;
+      letter-spacing: 1.2px;
+    }
+    .faq-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .faq-item {
+      margin-bottom: 32px;
+      border-bottom: 1px solid #e3f6fc;
+      padding-bottom: 26px;
+    }
+    .faq-question {
+      font-size: 1.18rem;
+      font-weight: 600;
+      color: #1976d2;
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .faq-question i {
+      margin-right: 8px;
+      color: #1976d2;
+    }
+    .faq-answer {
+      font-size: 1.08rem;
+      color: #222;
+      line-height: 1.7;
+      margin-left: 26px;
+    }
+    @media (max-width: 700px) {
+      .faq-container {
+        padding: 18px 4px;
+      }
+      .faq-title {
+        font-size: 1.3rem;
+      }
+      .faq-question {
+        font-size: 1rem;
+      }
+      .faq-answer {
+        font-size: 0.98rem;
+        margin-left: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="main-header">
+    <div class="container">
+      <!-- Logo -->
+      <a href="index.html" class="logo">
+        <img src="logo.jpg" alt="Website Logo" style="height:70px;" />
+      </a>
+      <!-- Navigation -->
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="faq.html" class="active">FAQ</a></li>
+          <li><a href="#footer">About Us</a></li>
+          <li class="dropdown-parent">
+            <a href="#">Services <i class="fa-solid fa-chevron-down arrow"></i></a>
+            <div class="dropdown">
+              <a href="index.html#symptom-checker symtom">Symptom Checker</a>
+            </div>
+          </li>
+          <li class="dropdown-parent">
+            <a href="#">Well-Being <i class="fa-solid fa-chevron-down arrow"></i></a>
+            <div class="dropdown">
+              <a href="#">Yoga</a>
+              <a href="#">Meditation</a>
+              <a href="#">Fitness</a>
+            </div>
+          </li>
+          <li class="dropdown-parent">
+            <a href="#">More <i class="fa-solid fa-chevron-down arrow"></i></a>
+            <div class="dropdown">
+              <a href="#">Blog</a>
+              <a href="news.html">News</a>
+              <a href="faq.html">FAQ</a>
+            </div>
+          </li>
+        </ul>
+      </nav>
+      <!-- Action Buttons -->
+      <div class="header-actions">
+        <a href="login.html" class="btn btn-secondary" id="login-btn">Login</a>
+        <div id="profile-menu" class="dropdown-parent" style="display:none;">
+          <a href="#" id="profile-trigger" class="btn btn-secondary">
+            <i class="fa-solid fa-user"></i>
+            <span id="profile-username"></span>
+            <i class="fa-solid fa-chevron-down arrow"></i>
+          </a>
+          <div class="dropdown">
+            <a href="#" id="logout-btn">Logout</a>
+          </div>
+        </div>
+        <a href="#" class="btn btn-primary btna">Book Appointment</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="faq-container">
+      <h1 class="faq-title"><i class="fa-solid fa-circle-question"></i> Symptom Checker FAQ</h1>
+      <ul class="faq-list">
+        <li class="faq-item">
+          <div class="faq-question"><i class="fa-solid fa-question"></i>1. What is this Symptom Checker?</div>
+          <div class="faq-answer">Our Symptom Checker is an online tool that helps you get a preliminary understanding of potential health conditions based on your symptoms. It is not a replacement for professional medical advice.</div>
+        </li>
+        <li class="faq-item">
+          <div class="faq-question"><i class="fa-solid fa-gears"></i>2. How does it work?</div>
+          <div class="faq-answer">You input your symptoms into the tool, and it matches them against a database of common diseases. It then provides a ranked list of possible conditions for informational purposes.</div>
+        </li>
+        <li class="faq-item">
+          <div class="faq-question"><i class="fa-solid fa-bullseye"></i>3. Is it accurate?</div>
+          <div class="faq-answer">While the system uses a curated database of symptoms and diseases, it cannot guarantee a diagnosis. For accurate medical advice, always consult a qualified healthcare professional.</div>
+        </li>
+        <li class="faq-item">
+          <div class="faq-question"><i class="fa-solid fa-user-lock"></i>4. Do I need to create an account to use it?</div>
+          <div class="faq-answer">Basic symptom checking can be done without an account, but creating an account allows you to save past checks, track symptoms, and access personalized recommendations.</div>
+        </li>
+        <li class="faq-item">
+          <div class="faq-question"><i class="fa-solid fa-children"></i>5. Can children or elderly use this tool?</div>
+          <div class="faq-answer">Yes, but symptom interpretation may vary by age. Always consult a doctor for children, the elderly, or patients with chronic conditions.</div>
+        </li>
+        <li class="faq-item">
+          <div class="faq-question"><i class="fa-solid fa-shield-halved"></i>6. Are my health data and symptoms private?</div>
+          <div class="faq-answer">Yes, all data is stored securely. We do not share personal health data with third parties. Always read our Privacy Policy for details.</div>
+        </li>
+        <li class="faq-item">
+          <div class="faq-question"><i class="fa-solid fa-triangle-exclamation"></i>7. What should I do if the symptom checker suggests a serious condition?</div>
+          <div class="faq-answer">If a serious condition is indicated, seek medical attention immediately. Do not rely solely on the tool for urgent symptoms.</div>
+        </li>
+        <li class="faq-item">
+          <div class="faq-question"><i class="fa-solid fa-user-doctor"></i>8. Can I use it to replace my doctor visits?</div>
+          <div class="faq-answer">No. This tool is meant for educational and informational purposes only. Always consult a healthcare professional for proper diagnosis and treatment.</div>
+        </li>
+        <li class="faq-item">
+          <div class="faq-question"><i class="fa-solid fa-layer-group"></i>9. Why does it show multiple possible conditions?</div>
+          <div class="faq-answer">Symptoms often overlap across diseases. The tool shows all potential matches ranked by likelihood, so you can discuss them with your doctor.</div>
+        </li>
+        <li class="faq-item">
+          <div class="faq-question"><i class="fa-solid fa-comment-medical"></i>10. Can I suggest new symptoms or conditions?</div>
+          <div class="faq-answer">If your experience suggests missing data, you can submit suggestions via our feedback form to help improve the tool.</div>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="main-footer" id="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4>Arogya Mitra Hospital</h4>
+          <p>
+            123 Health Road, Badlapur (W),
+            <br />
+            Maharashtra, 421503
+          </p>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <p><strong>Emergency:</strong> 0251-123-4567</p>
+          <p><strong>Appointments:</strong> 0251-765-4321</p>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>© 2025 Arogya Mitra Hospital. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

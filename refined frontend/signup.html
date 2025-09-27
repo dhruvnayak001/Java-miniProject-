@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="signup.css">
+</head>
+<body>
+    <div class="login-page">
+
+        <header class="main-header">
+        <div class="container">
+            <!-- Logo -->
+            <a href="index.html" class="logo">
+                <img src="logo.jpg" alt="Website Logo" style="height:70px;">
+            </a>
+
+                        <!-- Navigation -->
+            <nav class="main-nav">
+                <ul>
+                    <li>
+                        <a href="#">About Us</a>
+                    </li>
+
+                    <li class="dropdown-parent">
+                        <a href="#">Services <i class="fa-solid fa-chevron-down arrow"></i></a>
+                        <div class="dropdown">
+                            <a href="#">Symptom Checker</a>
+                        </div>
+                    </li>
+
+                    <li class="dropdown-parent">
+                        <a href="#">Well-Being <i class="fa-solid fa-chevron-down arrow"></i></a>
+                        <div class="dropdown">
+                            <a href="#">Yoga</a>
+                            <a href="#">Meditation</a>
+                            <a href="#">Fitness</a>
+                        </div>
+                    </li>
+
+                    <li class="dropdown-parent">
+                        <a href="#">More <i class="fa-solid fa-chevron-down arrow"></i></a>
+                        <div class="dropdown">
+                            <a href="#">Blog</a>
+                            <a href="#">Contact</a>
+                            <a href="#">FAQ</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Action Buttons -->
+            <div class="header-actions">
+                <a href="login.html" class="btn btn-secondary">Login</a>
+                <a href="#" class="btn btn-primary btna">Book Appointment</a>
+            </div>
+        </div>
+    </header>
+
+        <div class="login-container">
+            <div class="login-box">
+                
+                <h2>Create an Account</h2>
+                <form id="signupForm">
+                    <input type="text" id="name" placeholder="Full Name" required>
+                    <input type="text" id="username" placeholder="Username" required>
+                    <input type="password" id="password" placeholder="Password" required>
+                    <input type="number" id="age" placeholder="Age" min="1" required>
+                    <input type="text" id="pan" placeholder="PAN Number" required>
+                    <input type="text" id="state" placeholder="State" required>
+                    <input type="text" id="city" placeholder="City" required>
+                    <input type="text" id="country" placeholder="Country" required>
+                    <button type="submit" class="signup">Sign Up</button>
+                </form>
+                <p class="redirect-text">
+                    Already have an account? <a href="login.html">Log In</a>
+                </p>
+            </div>
+        </div>
+    </div>
+    
+
+
+    <!-- Footer Section -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div><h4>Arogya Mitra Hospital</h4><p>123 Health Road, Badlapur (W),<br>Maharashtra, 421503</p></div>
+                <div><h4>Contact</h4><p><strong>Emergency:</strong> 0251-123-4567</p><p><strong>Appointments:</strong> 0251-765-4321</p></div>
+                <div><h4>Quick Links</h4><ul><li><a href="#">About Us</a></li><li><a href="#">Careers</a></li><li><a href="#">Contact</a></li></ul></div>
+            </div>
+            <div class="copyright"><p>© 2025 Arogya Mitra Hospital. All Rights Reserved.</p></div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
